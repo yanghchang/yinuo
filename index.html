@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>电竞选手一诺 - 个人网站 | 天赋与操作并存</title>
+    <!-- SEO 优化：添加描述与关键词 -->
+    <meta name="description" content="电竞选手一诺（徐必成）个人网站，KPL顶级发育路，成都AG超玩会核心，亚运会金牌得主，FMVP公孙离。">
+    <meta name="keywords" content="一诺,徐必成,AG超玩会,KPL,王者荣耀,公孙离,电竞,亚运会金牌">
+    <meta name="author" content="一诺个人站点">
+    <!-- 结构化数据 JSON-LD 增强SEO (不改变视觉) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "徐必成",
+      "alternateName": "一诺",
+      "nationality": "中国",
+      "birthDate": "2001-12-26",
+      "jobTitle": "王者荣耀职业选手",
+      "memberOf": {
+        "@type": "SportsTeam",
+        "name": "成都AG超玩会"
+      },
+      "award": ["KPL总冠军", "世冠FMVP", "杭州亚运会金牌"]
+    }
+    </script>
+    <style>
+        /* 全局样式重置 *代表所有标签 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* 页面整体body样式 - 默认深色主题 */
+        body {
+            background-color: #0f0f1a;
+            color: #fff;
+            line-height: 1.7;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* 浅色主题变量 */
+        body.light {
+            background-color: #f5f5f7;
+            color: #222;
+        }
+
+        body.light .card {
+            background: #ffffff;
+            box-shadow: 0 0 18px rgba(0,0,0,0.1);
+        }
+
+        body.light .card p {
+            color: #444;
+        }
+
+        body.light .info-item,
+        body.light .data-item,
+        body.light .video-box,
+        body.light .hero-tag {
+            background: #e8e8ee;
+            color: #222;
+        }
+
+        body.light .team-member p {
+            color: #666;
+        }
+
+        body.light footer {
+            background: #ddd;
+            color: #333;
+        }
+
+        body.light .carousel-btn {
+            background: rgba(0,0,0,0.5);
+            color: white;
+        }
+
+        body.light nav {
+            background: rgba(240, 240, 245, 0.95);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+
+        body.light .nav-links a {
+            color: #333;
+        }
+
+        body.light .logo {
+            color: #ff3c57;
+        }
+
+        body.light canvas {
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* 导航栏固定在顶部 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(20, 20, 35, 0.9);
+            padding: 14px 0;
+            z-index: 999;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        /* 导航栏鼠标悬浮时背景变实 */
+        nav:hover {
+            background: rgba(20, 20, 35, 1);
+        }
+
+        body.light nav:hover {
+            background: rgba(240, 240, 245, 1);
+        }
+
+        /* 导航内容容器：居中 + 左右布局 */
+        .nav-wrap {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* LOGO样式 */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff3c57;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* 导航链接样式 */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #eee;
+            text-decoration: none;
+            font-size: 15px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        /* 导航下划线动画 */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff3c57;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff3c57;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* 主题切换按钮样式 */
+        .theme-btn {
+            background: #ff3c57;
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 8px;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255,60,87,0.5);
+        }
+
+        /* 顶部大图横幅 */
+        .banner {
+            margin-top: 60px;
+            height: 700px;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('images/banner_bg.jpg');
+            background-size: cover;
+            background-position: center top;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        /* 淡入动画 */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .banner-text h1 {
+            font-size: 56px;
+            color: #ff3c57;
+            margin-bottom: 10px;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        /* 文字发光动画 */
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 5px #ff3c57, 0 0 10px #ff3c57; }
+            100% { text-shadow: 0 0 10px #ff3c57, 0 0 20px #ff3c57, 0 0 30px #ff3c57; }
+        }
+
+        .banner-text p {
+            font-size: 20px;
+            color: #ddd;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeIn 1.8s ease forwards;
+        }
+
+        /* 打字机效果区域 */
+        .typing-text {
+            font-size: 22px;
+            color: #ffaa66;
+            margin-top: 15px;
+            min-height: 50px;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* banner里的头像 */
+        .banner-img {
+            width: 280px;
+            height: auto;
+            border-radius: 12px;
+            margin: 25px auto 0;
+            display: block;
+            border: 3px solid #ff3c57;
+            box-shadow: 0 0 20px rgba(255, 60, 87, 0.3);
+            transition: all 0.3s ease;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        .banner-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 60, 87, 0.5);
+        }
+
+        /* 内容容器：控制页面宽度、居中 */
+        .container {
+            width: 88%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        /* 卡片样式：每个板块都是一个卡片 */
+        .card {
+            background: #181828;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 18px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+            opacity: 1;
+            transform: translateY(0);
+            scroll-margin-top: 80px;
+        }
+
+        .card:hover {
+            box-shadow: 0 0 25px rgba(255,60,87,0.2);
+            transform: translateY(-5px);
+        }
+
+        /* 卡片大标题 */
+        .card h2 {
+            font-size: 28px;
+            color: #ff3c57;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff3c57;
+            padding-left: 14px;
+            transition: padding-left 0.3s ease;
+        }
+
+        .card:hover h2 {
+            padding-left: 18px;
+        }
+
+        /* 卡片小标题 */
+        .card h3 {
+            font-size: 20px;
+            color: #fff;
+            margin: 18px 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .card h3:hover {
+            color: #ff3c57;
+        }
+
+        /* 卡片正文 */
+        .card p {
+            color: #ccc;
+            font-size: 16px;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        /* 板块内图片/视频 */
+        .section-img {
+            width: 100%;
+            max-width: 650px;
+            border-radius: 12px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 0 15px rgba(255,60,87,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .section-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* 信息网格布局 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            background: #202035;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            background: #252540;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255,60,87,0.15);
+        }
+
+        .info-item h4 {
+            color: #ff3c57;
+            margin-bottom: 6px;
+        }
+
+        /* 英雄标签 */
+        .hero-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .hero-tag {
+            background: #252540;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #eee;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .hero-tag:hover {
+            background: #ff3c57;
+            transform: scale(1.1);
+        }
+
+        /* 视频盒子 */
+        .video-box {
+            background: #202035;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 16px rgba(255,60,87,0.2);
+            border: 1px solid #ff3c57;
+        }
+
+        .video-box h3 {
+            color: #ff3c57;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .video-box:hover h3 {
+            transform: translateX(5px);
+        }
+
+        .video-box a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #ff3c57;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .video-box a:hover {
+            background: #e6334b;
+            transform: scale(1.08);
+            box-shadow: 0 0 8px rgba(255,60,87,0.3);
+        }
+
+        /* 数据网格 */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .data-item {
+            background: #202035;
+            padding: 18px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .data-item:hover {
+            background: #252540;
+            transform: scale(1.08);
+            box-shadow: 0 0 12px rgba(255,60,87,0.15);
+        }
+
+        .data-item .num {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff3c57;
+            margin: 8px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .data-item:hover .num {
+            transform: scale(1.1);
+        }
+
+        /* 队友网格 */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .team-member a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-member img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid #ff3c57;
+            transition: all 0.4s ease;
+        }
+
+        .team-member img:hover {
+            transform: scale(1.12);
+            box-shadow: 0 0 15px rgba(255,60,87,0.3);
+        }
+
+        .team-member h4 {
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .team-member a:hover h4 {
+            color: #ff3c57;
+        }
+
+        .team-member p {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        /* 轮播图容器 */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255,60,87,0.2);
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: 400px;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 60, 87, 0.7);
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: #ff3c57;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 0 10px rgba(255,60,87,0.5);
+        }
+
+        .prev-btn { left: 15px; }
+        .next-btn { right: 15px; }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: #ff3c57;
+            transform: scale(1.2);
+            box-shadow: 0 0 8px rgba(255,60,87,0.8);
+        }
+
+        /* 社交账号 */
+        .social {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social a {
+            display: inline-block;
+            margin: 0 12px;
+            padding: 10px 20px;
+            background: #252540;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social a:hover {
+            background: #ff3c57;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(255,60,87,0.2);
+        }
+
+        /* 回到顶部按钮 */
+        .go-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #ff3c57;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+
+        .go-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .go-top:hover {
+            transform: scale(1.1);
+            background: #e6334b;
+        }
+
+        /* 视频提示浮层 */
+        .video-tip {
+            position: absolute;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 10;
+            transition: opacity 0.3s;
+        }
+
+        /* 雷达图容器 */
+        .radar-container {
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        canvas {
+            width: 100%;
+            height: auto;
+            background: #1e1e2e;
+            border-radius: 12px;
+            padding: 10px;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #131322;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+            color: #888;
+            transition: background 0.3s ease;
+        }
+
+        footer:hover {
+            background: #0f0f1a;
+        }
+
+        /* 手机端响应式 */
+        @media (max-width: 768px) {
+            .banner-text h1 { font-size: 36px; }
+            .nav-links a { margin-left: 0; font-size: 12px; }
+            .nav-links { gap: 10px; }
+            .section-img { max-width: 100%; }
+            .banner-img { width: 220px; }
+            .banner { height: 620px; }
+            .carousel-img { height: 250px; }
+            .carousel-btn { width: 30px; height: 30px; font-size: 14px; }
+            .go-top { width: 40px; height: 40px; font-size: 20px; bottom: 20px; right: 20px; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="nav-wrap">
+            <div class="logo">一诺 · YI NUO</div>
+            <div class="nav-links">
+                <a href="#basic">基本信息</a>
+                <a href="#experience">人物履历</a>
+                <a href="#data">比赛数据</a>
+                <a href="#hero">英雄池</a>
+                <a href="#team">队友介绍</a>
+                <a href="#video">高光视频</a>
+                <a href="#social">社交账号</a>
+                <a href="#photo">赛场图集</a>
+                <button class="theme-btn" id="themeToggle" aria-label="切换亮色/暗色主题">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <div class="banner-text">
+            <h1>徐必成 · 一诺</h1>
+            <p>KPL顶级发育路 | 成都AG超玩会核心 | 天赋与操作并存的顶级选手</p>
+            <div class="typing-text" id="typingText"></div>
+            <img src="images/banner_avatar.jpg" alt="一诺赛场英姿" class="banner-img" loading="eager">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card" id="basic">
+            <h2>基本信息</h2>
+            <div class="info-grid">
+                <div class="info-item"><h4>姓名</h4><p>徐必成</p></div>
+                <div class="info-item"><h4>游戏ID</h4><p>一诺</p></div>
+                <div class="info-item"><h4>出生日期</h4><p>2001年12月26日</p></div>
+                <div class="info-item"><h4>籍贯</h4><p>江西抚州南丰县</p></div>
+                <div class="info-item"><h4>位置</h4><p>发育路 / 射手</p></div>
+                <div class="info-item"><h4>现役战队</h4><p>成都AG超玩会</p></div>
+            </div>
+            <p>徐必成（游戏ID：一诺），中国《王者荣耀》职业电竞选手，司职发育路，是KPL联盟人气与实力兼具的顶级选手，赛场打法激进、操作细腻、大心脏抗压能力极强，擅长各类射手英雄，多次斩获联赛荣誉与个人大奖，同时也是杭州亚运会王者荣耀亚运版本冠军成员，职业生涯斩获多项赛事冠军与个人荣誉，成为王者荣耀电竞圈标志性人物。</p>
+            <!-- 性能优化：视频preload改为metadata 保留所有原属性 -->
+            <video class="section-img" poster="images/img_basic.jpg" preload="metadata" playsinline muted="false" controls="false" style="width:100%;height:auto;object-fit:cover;cursor:pointer" onmouseenter="this.play()" onmouseleave="this.pause()" onclick="this.paused ? this.play() : this.pause()">
+                <source src="images/一诺勋章.mp4" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+        </div>
+
+        <div class="card" id="experience">
+            <h2>人物履历</h2>
+            <h3>一、早年经历</h3>
+            <p>2001年12月26日，徐必成出生于江西省抚州市南丰县，从小接触王者荣耀游戏，展现出极强的游戏天赋与操作能力。怀揣电竞梦想，他年少时便决心走上职业电竞道路，经过长期刻苦训练，凭借出色的边路实力，在青训选手中脱颖而出。</p>
+            <p>2017年，徐必成正式加入BA黑凤梨电子竞技俱乐部二队，确定游戏ID为“一诺”，正式开启职业电竞生涯，潜心打磨技术，等待登上职业赛场的机会。</p>
+            <h3>二、职业生涯</h3>
+            <h3>BA黑凤梨时期（2018-2019.8）</h3>
+            <p>2018年，一诺以边路状元身份从BA黑凤梨二队升至一队，正式成为KPL职业选手，同年斩获KPL青训营最佳边路新秀称号。</p>
+            <p>2018年KPL秋季赛，一诺作为战队首发边路选手，帮助BA黑凤梨打出常规赛16连胜的傲人战绩，一举刷新KPL联赛历史最长连胜纪录，最终以18胜2负锁定东部第一挺进季后赛；总决赛中，一诺率领队伍鏖战七局，最终3-4惜败南京Hero久竞，遗憾收获亚军。</p>
+            <p>2019年KPL春季赛，战队阵容变动，BA黑凤梨整体战绩下滑，最终以4胜10负的战绩无缘季后赛，一诺依旧保持稳定发挥，成为队伍核心支柱。</p>
+            <h3>成都AG超玩会时期（2019.8-至今）</h3>
+            <p>2019年8月12日，AG超玩会完成对BA黑凤梨KPL联赛席位收购，一诺随队正式加盟成都AG超玩会，转型发育路射手位置，开启职业生涯新篇章。</p>
+            <video class="section-img" poster="images/img_ag.jpg" preload="metadata" playsinline muted="false" controls="false" style="width:100%;height:auto;object-fit:cover;cursor:pointer" onmouseenter="this.play()" onmouseleave="this.pause()" onclick="this.paused ? this.play() : this.pause()">
+                <source src="images/AG秋季赛.mp4" type="video/mp4">
+            </video>
+            <p>2019年KPL秋季赛，一诺成为队伍核心射手，带领AG超玩会一路过关斩将，败者组半决赛使用公孙离完成关键绕后操作，助力队伍淘汰对手晋级；总决赛中，一诺带领AG超玩会以4-1大胜重庆QGhappy，帮助AG超玩会夺得队史首座KPL总冠军，个人入选2019年度KPL最佳发育路阵容。</p>
+            <p>2020年KPL春季赛，一诺状态火热，常规赛斩获19次MVP位列全联盟第一，包揽常规赛最佳选手与最佳发育路两大奖项，带领队伍以西部第一挺进季后赛，总决赛不敌TS收获亚军；同年达成个人KPL职业生涯1000杀成就，当选年度最受欢迎选手。</p>
+            <p>2023年王者荣耀世界冠军杯，一诺发挥极致，带领成都AG超玩会夺得总冠军，个人斩获赛事FMVP，公孙离成为其定制FMVP皮肤英雄，皮肤定名“云诺千山”，成为KPL历史上极具含金量的射手位FMVP选手。</p>
+            <p>2023年杭州亚运会，一诺成功入选亚运会电竞国家队，出战王者荣耀亚运版本项目，半决赛助力中国队2-0战胜泰国队，决赛2-0击败马来西亚队，成功摘得亚运会电竞项目金牌，实现电竞赛场国家级荣誉突破。</p>
+            <video class="section-img" poster="images/img_asia.jpg" preload="metadata" playsinline muted="false" controls="false" style="width:100%;height:auto;object-fit:cover;cursor:pointer" onmouseenter="this.play()" onmouseleave="this.pause()" onclick="this.paused ? this.play() : this.pause()">
+                <source src="images/亚运会夺冠.mp4" type="video/mp4">
+            </video>
+            <p>2024-2025年，一诺持续保持巅峰状态，先后带领队伍夺得KPL夏季赛冠军、年度总决赛冠军、挑战者杯冠军、电竞世界杯冠军等多项荣誉，多次入选KPL最佳阵容，蝉联年度最受欢迎选手，总击杀数突破3000、3400大关，不断刷新联赛射手位纪录。</p>
+            <h3>三、国家队与社会经历</h3>
+            <p>2023年，入选杭州亚运会中国电竞代表队，夺得王者荣耀亚运版本项目金牌；2024年随KPL王者梦之队夺得沙特电竞世界杯王者荣耀赛事冠军并斩获FMVP；多次参与电竞公益活动，荣获最佳电竞公益传播奖；参演电竞夺金纪录电影，登上各类电竞盛典舞台，获评福布斯中国电竞30卓越电竞选手。</p>
+        </div>
+
+        <div class="card" id="data">
+            <h2>比赛数据 &amp; 荣誉战绩</h2>
+            <div class="data-grid" id="dataGrid">
+                <div class="data-item"><p>生涯总击杀</p><div class="num" data-target="3400">0</div></div>
+                <div class="data-item"><p>场均击杀</p><div class="num" data-target="3.4">0</div></div>
+                <div class="data-item"><p>参团率</p><div class="num" data-target="68">0%</div></div>
+                <div class="data-item"><p>出场次数</p><div class="num" data-target="500">0</div></div>
+            </div>
+            <h3>核心荣誉</h3>
+            <p>✅ 2019KPL秋季赛总冠军</p>
+            <p>✅ 2023王者荣耀世冠冠军&amp;FMVP</p>
+            <p>✅ 2023杭州亚运会电竞项目金牌</p>
+            <p>✅ 2024-2025KPL多座联赛冠军</p>
+            <p>✅ 多次KPL年度最受欢迎选手</p>
+            <p>✅ KPL最佳发育路、常规赛最佳选手</p>
+            <p>✅ 王者荣耀电竞世界杯冠军&amp;最受欢迎选手</p>
+            <img src="images/img_data.jpg" alt="一诺比赛高光时刻" class="section-img" loading="lazy">
+        </div>
+
+        <div class="card" id="hero">
+            <h2>英雄池能力图</h2>
+            <div class="radar-container">
+                <canvas id="radarCanvas" width="400" height="400"></canvas>
+            </div>
+            <div class="hero-list">
+                <span class="hero-tag">公孙离 ⭐⭐⭐⭐⭐</span>
+                <span class="hero-tag">孙尚香 ⭐⭐⭐⭐⭐</span>
+                <span class="hero-tag">马可波罗 ⭐⭐⭐⭐⭐</span>
+                <span class="hero-tag">狄仁杰 ⭐⭐⭐⭐</span>
+                <span class="hero-tag">李元芳 ⭐⭐⭐⭐</span>
+                <span class="hero-tag">虞姬 ⭐⭐⭐⭐</span>
+            </div>
+        </div>
+
+        <div class="card" id="team">
+            <h2>AG超玩会队友（点击头像直达百科）</h2>
+            <div class="team-grid">
+                <div class="team-member"><a href="https://baike.baidu.com/item/%E9%99%88%E5%AE%B6%E8%B1%AA/62593005" target="_blank" rel="noopener noreferrer"><img src="images/zhongyi.jpg" alt="钟意" loading="lazy"><h4>钟意</h4><p>打野</p></a></div>
+                <div class="team-member"><a href="https://baike.baidu.com/item/%E5%AD%9F%E5%AE%B6%E4%BF%8A/64048715" target="_blank" rel="noopener noreferrer"><img src="images/dashuai.jpg" alt="大帅" loading="lazy"><h4>大帅</h4><p>游走</p></a></div>
+                <div class="team-member"><a href="https://baike.baidu.com/item/%E8%B0%A2%E6%89%BF%E5%B3%BB/61965195" target="_blank" rel="noopener noreferrer"><img src="images/changsheng.jpg" alt="长生" loading="lazy"><h4>长生</h4><p>中路</p></a></div>
+                <div class="team-member"><a href="https://baike.baidu.com/item/%E5%88%98%E6%98%8E/63903178" target="_blank" rel="noopener noreferrer"><img src="images/xuanran.jpg" alt="轩染" loading="lazy"><h4>轩染</h4><p>对抗路</p></a></div>
+            </div>
+        </div>
+
+        <div class="card" id="video">
+            <h2>高光时刻视频（点击跳转观看）</h2>
+            <div class="video-box"><h3>🔥 一诺公孙离总决赛绕后逆天翻盘</h3><a href="https://www.bilibili.com/video/BV1WJ411Q7hb/" target="_blank" rel="noopener noreferrer">前往观看</a></div>
+            <div class="video-box"><h3>🔥 孙尚香伪五杀 全场疯狂收割</h3><a href="https://www.bilibili.com/video/BV1sJ411u7zK/" target="_blank" rel="noopener noreferrer">前往观看</a></div>
+            <div class="video-box"><h3>🔥 顶级反应极限逃生反杀合集</h3><a href="https://www.bilibili.com/video/BV1A5RJYqEeQ/" target="_blank" rel="noopener noreferrer">前往观看</a></div>
+            <div class="video-box"><h3>🔥 马可波罗大招进场 瞬间融化后排</h3><a href="https://www.bilibili.com/video/BV1DJPceXEpA/" target="_blank" rel="noopener noreferrer">前往观看</a></div>
+            <div class="video-box"><h3>🔥 狄仁杰丝血反杀两人 顶级走位</h3><a href="https://www.bilibili.com/video/BV1yQSnYaEJr/" target="_blank" rel="noopener noreferrer">前往观看</a></div>
+            <div class="video-box"><h3>🔥 一诺职业生涯全高光合集</h3><a href="https://www.bilibili.com/video/BV1D9CeBxEmH/" target="_blank" rel="noopener noreferrer">前往观看</a></div>
+        </div>
+
+        <div class="card" id="social">
+            <h2>社交账号</h2>
+            <div class="social"><a href="https://weibo.com/u/6010864489" target="_blank" rel="noopener noreferrer">微博：AG一诺</a>
+                                <a href="https://www.douyin.com/user/MS4wLjABAAAA0plEjJa_eRXpUhYAKdsacL08pT_kVm0ByvYinE6_pxQHDQblBITv7RYL211NBGZC" target="_blank" rel="noopener noreferrer">抖音：AG一诺</a></div>
+        </div>
+
+        <div class="card" id="photo">
+            <h2>赛场精彩图集</h2>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <!-- 为9张轮播图添加懒加载(前两张eager，后续懒加载) -->
+                    <img src="images/gallery1.jpg" alt="一诺赛场照1" class="carousel-img" loading="eager">
+                    <img src="images/gallery2.jpg" alt="一诺定妆照" class="carousel-img" loading="eager">
+                    <img src="images/gallery3.jpg" alt="一诺比赛照" class="carousel-img" loading="lazy">
+                    <img src="images/gallery4.jpg" alt="一诺赛场图1" class="carousel-img" loading="lazy">
+                    <img src="images/gallery5.jpg" alt="一诺赛场图2" class="carousel-img" loading="lazy">
+                    <img src="images/gallery6.jpg" alt="一诺赛场图3" class="carousel-img" loading="lazy">
+                    <img src="images/gallery7.jpg" alt="一诺赛场图4" class="carousel-img" loading="lazy">
+                    <img src="images/gallery8.jpg" alt="一诺赛场图5" class="carousel-img" loading="lazy">
+                    <img src="images/gallery9.jpg" alt="一诺赛场图6" class="carousel-img" loading="lazy">
+                </div>
+                <button class="carousel-btn prev-btn" aria-label="上一张">&lt;</button>
+                <button class="carousel-btn next-btn" aria-label="下一张">&gt;</button>
+                <div class="carousel-indicators" id="dynamicIndicators"></div>
+            </div>
+        </div>
+    </div>
+
+    <button class="go-top" id="goTop" aria-label="回到顶部">↑</button>
+    <footer><p>一诺电竞个人网站</p></footer>
+
+    <script>
+        (function() {
+            // ---------- 1. 主题切换 (localStorage容错) ----------
+            const themeBtn = document.getElementById('themeToggle');
+            const body = document.body;
+            try {
+                if (localStorage.getItem('theme') === 'light') {
+                    body.classList.add('light');
+                    themeBtn.textContent = '☀️';
+                }
+            } catch(e) { /* 隐私模式忽略 */ }
+            themeBtn.addEventListener('click', () => {
+                body.classList.toggle('light');
+                const isLight = body.classList.contains('light');
+                try {
+                    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+                } catch(e) {}
+                themeBtn.textContent = isLight ? '☀️' : '🌙';
+            });
+
+            // ---------- 2. 回到顶部 (显示阈值优化为200px) ----------
+            const goTopBtn = document.getElementById('goTop');
+            window.addEventListener('scroll', () => {
+                goTopBtn.classList.toggle('show', window.scrollY > 200);
+            });
+            goTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+            // ---------- 3. 打字机效果 ----------
+            const phrases = ['🏆 顶级射手 · 一诺', '⭐ 双FMVP 得主', '🥇 亚运金牌选手', '🔥 公孙离天花板'];
+            let phraseIndex = 0, charIndex = 0;
+            const typingEl = document.getElementById('typingText');
+            function typeWriter() {
+                if (charIndex <= phrases[phraseIndex].length) {
+                    typingEl.textContent = phrases[phraseIndex].substring(0, charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, 120);
+                } else {
+                    setTimeout(() => {
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        charIndex = 0;
+                        typeWriter();
+                    }, 2000);
+                }
+            }
+            typeWriter();
+
+            // ---------- 4. 数字滚动动画（增加节流优化） ----------
+            const dataNums = document.querySelectorAll('#dataGrid .num');
+            let animationTriggered = false;
+            let scrollTimer = null;
+            function startNumberRoll() {
+                if (animationTriggered) return;
+                const dataSection = document.getElementById('data');
+                if (!dataSection) return;
+                const rect = dataSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    animationTriggered = true;
+                    dataNums.forEach(el => {
+                        const target = parseFloat(el.getAttribute('data-target'));
+                        if (isNaN(target)) return;
+                        let current = 0;
+                        const step = target / 50;
+                        const timer = setInterval(() => {
+                            current += step;
+                            if (current >= target) {
+                                el.innerText = target + (el.innerText.includes('%') ? '%' : '');
+                                clearInterval(timer);
+                            } else {
+                                el.innerText = Math.floor(current) + (el.innerText.includes('%') ? '%' : '');
+                            }
+                        }, 20);
+                    });
+                }
+            }
+            window.addEventListener('scroll', () => {
+                if (scrollTimer) cancelAnimationFrame(scrollTimer);
+                scrollTimer = requestAnimationFrame(startNumberRoll);
+            });
+            startNumberRoll();
+
+            // ---------- 5. 视频提示浮层 (容错) ----------
+            document.querySelectorAll('video').forEach(video => {
+                if (video.parentElement) {
+                    const tip = document.createElement('div');
+                    tip.className = 'video-tip';
+                    tip.textContent = '▶ 悬停播放 | 点击暂停';
+                    tip.style.position = 'absolute';
+                    tip.style.bottom = '10px';
+                    tip.style.left = '10px';
+                    tip.style.opacity = '0';
+                    video.parentElement.style.position = 'relative';
+                    video.parentElement.appendChild(tip);
+                    video.addEventListener('mouseenter', () => tip.style.opacity = '1');
+                    video.addEventListener('mouseleave', () => tip.style.opacity = '0');
+                    // 视频加载错误静默处理，不破坏界面
+                    video.addEventListener('error', () => {});
+                }
+            });
+
+            // ---------- 6. 雷达图绘制 ----------
+           // ---------- 雷达图动态绘制（滚动触发动画） ----------
+const canvas = document.getElementById('radarCanvas');
+if (canvas) {
+    const ctx = canvas.getContext('2d');
+    const dimensions = ['公孙离', '孙尚香', '马可波罗', '狄仁杰', '李元芳', '虞姬'];
+    const scores = [98, 95, 94, 88, 85, 82];  // 最终能力值
+    let radarAnimationStarted = false;
+    let animProgress = 0;  // 动画进度 0 -> 1
+    let animFrame = null;
+    
+    const w = canvas.width, h = canvas.height;
+    const centerX = w/2, centerY = h/2;
+    const radius = 140;
+    const angles = dimensions.map((_, i) => i * Math.PI * 2 / dimensions.length - Math.PI/2);
+    
+    // 基础网格绘制函数（不需要动画的部分）
+    function drawGrid() {
+        // 绘制五层同心圆网格
+        for (let level = 1; level <= 5; level++) {
+            ctx.beginPath();
+            let r = radius * level / 5;
+            angles.forEach((angle, i) => {
+                let x = centerX + r * Math.cos(angle);
+                let y = centerY + r * Math.sin(angle);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.closePath();
+            ctx.strokeStyle = '#ff3c57';
+            ctx.stroke();
+        }
+        // 绘制放射线
+        angles.forEach(angle => {
+            let x = centerX + radius * Math.cos(angle);
+            let y = centerY + radius * Math.sin(angle);
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(x, y);
+            ctx.strokeStyle = '#aaa';
+            ctx.stroke();
+        });
+        // 绘制英雄标签文字
+        angles.forEach((angle, i) => {
+            let x = centerX + (radius + 15) * Math.cos(angle);
+            let y = centerY + (radius + 15) * Math.sin(angle);
+            ctx.fillStyle = '#ff3c57';
+            ctx.font = '12px "Microsoft YaHei"';
+            ctx.fillText(dimensions[i], x - 15, y - 5);
+        });
+    }
+    
+    // 动态绘制数据多边形（根据progress进度）
+    function drawPolygon(progress) {
+        ctx.beginPath();
+        scores.forEach((score, i) => {
+            // 当前进度下，半径按比例增加
+            let currentR = radius * (score / 100) * progress;
+            let x = centerX + currentR * Math.cos(angles[i]);
+            let y = centerY + currentR * Math.sin(angles[i]);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+        });
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(255, 60, 87, 0.3)';
+        ctx.fill();
+        ctx.strokeStyle = '#ff3c57';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    }
+    
+    // 完整绘制（清除并重绘全部）
+    function fullDraw(progress = animProgress) {
+        ctx.clearRect(0, 0, w, h);
+        drawGrid();
+        drawPolygon(progress);
+    }
+    
+    // 启动动画
+    function startRadarAnimation() {
+        if (radarAnimationStarted) return;
+        const heroSection = document.getElementById('hero');
+        if (!heroSection) return;
+        const rect = heroSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100 && rect.bottom > 0) {
+            radarAnimationStarted = true;
+            animProgress = 0;
+            function animate() {
+                animProgress += 0.05;  // 每帧增加进度
+                if (animProgress >= 1) {
+                    animProgress = 1;
+                    fullDraw(1);
+                    cancelAnimationFrame(animFrame);
+                    return;
+                }
+                fullDraw(animProgress);
+                animFrame = requestAnimationFrame(animate);
+            }
+            animate();
+        }
+    }
+    
+    // 初始先画网格（多边形不画，透明度为0）
+    fullDraw(0);
+    
+    // 监听滚动，触发动画
+    window.addEventListener('scroll', () => {
+        requestAnimationFrame(startRadarAnimation);
+    });
+    startRadarAnimation();
+}
+
+            // ---------- 7. 轮播图（自动轮播，防内存泄漏） ----------
+            const carousel = document.querySelector('.carousel');
+            if (carousel) {
+                const imgContainer = carousel.querySelector('.carousel-images');
+                const images = imgContainer.querySelectorAll('.carousel-img');
+                const prevBtn = carousel.querySelector('.prev-btn');
+                const nextBtn = carousel.querySelector('.next-btn');
+                const indicatorsContainer = document.getElementById('dynamicIndicators');
+                const imgCount = images.length;
+                let currentIdx = 0, autoTimer = null;
+                
+                indicatorsContainer.innerHTML = '';
+                for (let i = 0; i < imgCount; i++) {
+                    const dot = document.createElement('span');
+                    dot.classList.add('indicator');
+                    dot.dataset.index = i;
+                    dot.addEventListener('click', () => { stopAuto(); goToIndex(i); startAuto(); });
+                    indicatorsContainer.appendChild(dot);
+                }
+                const indicators = document.querySelectorAll('.indicator');
+                function goToIndex(index) {
+                    if (index < 0) index = imgCount - 1;
+                    if (index >= imgCount) index = 0;
+                    currentIdx = index;
+                    imgContainer.style.transform = `translateX(-${currentIdx * 100}%)`;
+                    indicators.forEach((ind, i) => ind.classList.toggle('active', i === currentIdx));
+                }
+                function goToNext() { goToIndex(currentIdx + 1); }
+                function goToPrev() { goToIndex(currentIdx - 1); }
+                function startAuto() { if (autoTimer) clearInterval(autoTimer); autoTimer = setInterval(goToNext, 3000); }
+                function stopAuto() { if (autoTimer) clearInterval(autoTimer); }
+                prevBtn.addEventListener('click', () => { stopAuto(); goToPrev(); startAuto(); });
+                nextBtn.addEventListener('click', () => { stopAuto(); goToNext(); startAuto(); });
+                carousel.addEventListener('mouseenter', stopAuto);
+                carousel.addEventListener('mouseleave', startAuto);
+                goToIndex(0);
+                startAuto();
+            }
+        })();
+    </script>
+</body>
+</html>
